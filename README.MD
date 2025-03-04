@@ -25,16 +25,16 @@ Each model processes an input image and predicts the most probable waste categor
 
 ## **🛠️ Deployment Guide**
 
-## Setting Up Model Weights
+### Setting Up Model Weights
 
 Since the model weights are too large to be stored directly in the repository, we have provided a Google Drive link to download them. Follow these steps to properly set up the weights for the backend:
 
-### **1. Download Model Weights**
+#### **1. Download Model Weights**
 - Access the model weights from the following Google Drive link:  
   **[Download Model Weights](https://drive.google.com/drive/folders/12PDZ-qas8ONNrgz0JJkV8fgHCKM2oR85?usp=sharing)**
 - Download all files in the folder.
 
-### **2. Create the `weights` Directory**
+#### **2. Create the `weights` Directory**
 - Navigate to the backend directory in your local project:
   ```sh
   cd path/to/SmartBin/backend
@@ -44,7 +44,7 @@ Since the model weights are too large to be stored directly in the repository, w
   mkdir weights
   ```
 
-### **3. Move the Weights to the `weights` Folder**
+#### **3. Move the Weights to the `weights` Folder**
 - Place all downloaded `.pth` or `.pt` model weight files into the `weights/` directory.
 - Ensure that the folder structure looks like this:
   ```

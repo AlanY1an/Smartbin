@@ -9,6 +9,8 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
       - DEVICE=cuda # enable cuda
     #   - DEVICE=cpu
+      - NODE_ENV=production
+      - ALLOWED_ORIGINS=https://smartbin.vercel.app  # 允许前端访问
     deploy:
       resources:
         reservations:
@@ -16,11 +18,3 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-

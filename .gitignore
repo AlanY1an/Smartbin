@@ -1,0 +1,91 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+*.env
+
+# Logs and debugging
+logs/
+*.log
+nohup.out
+debug.log
+
+# Python cache
+*.sqlite3
+*.db
+.cache/
+
+# FastAPI specific
+instance/
+*.sqlite
+*.db-journal
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp
+.pnp.js
+
+# Build files
+build/
+dist/
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Docker
+docker-compose.override.yml
+docker-compose.yml.bak
+docker-compose.override.yml.bak
+.dockerignore
+.docker/
+smartbin-backend
+smartbin-frontend
+
+# Ignore Python package manager files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore compiled TypeScript and React build files
+*.tsbuildinfo
+
+# Ignore coverage reports
+coverage/
+*.cover
+.hypothesis/
+.coverage
+nosetests.xml
+pytest_cache/
+junitxml.xml
+
+# Ignore sensitive credentials (if any)
+*.pem
+*.crt
+*.key
+
+# Ignore AI model files (if stored locally)
+*.h5
+*.onnx
+*.ckpt
+*.pth
+*.pt
+
+# Ignore Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swo
+*.swn
+*.swp

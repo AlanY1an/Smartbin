@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+.ant-upload-drag-icon  {
+    margin-top: 20px;
+}
+
+.ant-upload-hint {
+    margin-bottom: 20px;
+}
+
+  

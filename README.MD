@@ -25,7 +25,7 @@ Each model processes an input image and predicts the most probable waste categor
 
 ## **🛠️ Deployment Guide**
 
-### Setting Up Model Weights
+### 1. Setting Up Model Weights
 
 Since the model weights are too large to be stored directly in the repository, we have provided a Google Drive link to download them. Follow these steps to properly set up the weights for the backend:
 
@@ -55,6 +55,7 @@ Since the model weights are too large to be stored directly in the repository, w
   │   │   ├── DenseNet.pth
   │   │   ├── ...
   ```
+### 2. Now Setup for the backend and frontend (Choose one):
 
 ### **Option 1: Deploy with Docker**
 

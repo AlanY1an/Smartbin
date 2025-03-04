@@ -9,4 +9,4 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
       - USE_CPU_ONLY=true
       - NODE_ENV=production
-      - ALLOWED_ORIGINS=https://smartbin.vercel.app  # 允许前端访问
+

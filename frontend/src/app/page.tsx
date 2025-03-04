@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Title from './components/Title';
 import MainContent from './components/MainContent';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <MainContent />
       </div>
       <Footer />
+      <Analytics />
     </div>
   );
 }

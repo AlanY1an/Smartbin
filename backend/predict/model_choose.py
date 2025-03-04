@@ -122,7 +122,7 @@ class ModelChoose:
             self._create_resnet50  # Default to ResNet50
         )
         model = model_creator()
-        model.load_state_dict(torch.load(self.config.pretrained_weights, weights_only=True))
+        model.load_state_dict(torch.load(self.config.pretrained_weights, map_location=self.config.device, weights_only=True))
 
         return model
 

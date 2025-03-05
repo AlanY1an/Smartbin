@@ -5,7 +5,7 @@ on:
     branches:
       - awsec2-docker
     paths:
-      - "backend/**" #only deploy when backend folder is changed
+      - "backend/**" #only deploy when backend folder is changed 1
 
 jobs:
   deploy:

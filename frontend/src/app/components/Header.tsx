@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { FaRecycle } from "react-icons/fa";
 import { useState } from 'react';
@@ -10,20 +12,20 @@ export default function Header() {
     <header className="border-b border-gray-200 bg-white shadow-2xs sticky top-0 z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <FaRecycle className="text-emerald-600 text-xl" />
             <span className="text-xl font-semibold">WasteClassifier AI</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/documentation" className="text-gray-600 hover:text-gray-900">
+            <Link href="https://github.com/AlanY1an/Smartbin" className="text-gray-600 hover:text-gray-900">
               Documentation
             </Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900">
               About
             </Link>
-            <button className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
+            <button onClick={() => window.open("https://github.com/AlanY1an/Smartbin", "_blank")} className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
               Get Started
             </button>
           </nav>
@@ -45,7 +47,7 @@ export default function Header() {
         >
           <nav className="flex flex-col py-4 space-y-4">
             <Link 
-              href="/documentation" 
+              href="https://github.com/AlanY1an/Smartbin" 
               className="text-gray-600 hover:text-gray-900 px-2 py-2 hover:bg-gray-50 rounded-lg transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >

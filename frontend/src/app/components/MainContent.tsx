@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { message } from 'antd';
 import { apiRequest } from "../api/api";
@@ -57,12 +59,13 @@ export default function MainContent() {
   }, [result?.image_url]);
 
   return (
-    <main className="flex-1 bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+    <div className="py-8">
+      <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Title />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
             {/* Left Column */}
-            <section className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 min-h-[500px] shadow-xl">
+            <section className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 shadow-xl">
               <div className="space-y-6">
                 <ModelSelector
                   selectedModel={selectedModel}
@@ -76,7 +79,7 @@ export default function MainContent() {
             </section>
 
             {/* Right Column */}
-            <section className="bg-white rounded-lg shadow-sm border border-gray-100 min-h-[500px] shadow-xl">
+            <section className="bg-white rounded-lg shadow-sm border border-gray-100 shadow-xl">
               <AnalysisResults
                 loading={loading}
                 result={result}
@@ -86,6 +89,6 @@ export default function MainContent() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 } 

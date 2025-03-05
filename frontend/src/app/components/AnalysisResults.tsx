@@ -40,7 +40,7 @@ const ConfidenceBar = ({ value }: { value: number }) => {
 export default function AnalysisResults({ loading, result, error }: AnalysisResultsProps) {
   if (loading) {
     return (
-      <div className="min-h-[500px] flex flex-col items-center justify-center p-6">
+      <div className="flex flex-col items-center justify-center p-6">
         <Spin size="large" />
         <p className="mt-4 text-gray-600 text-sm">Analyzing your image...</p>
       </div>
@@ -49,7 +49,7 @@ export default function AnalysisResults({ loading, result, error }: AnalysisResu
 
   if (error) {
     return (
-      <div className="min-h-[500px] flex flex-col items-center justify-center p-6">
+      <div className="flex flex-col items-center justify-center p-6">
         <div className="text-red-500 mb-4">
           <WarningOutlined style={{ fontSize: '48px' }} />
         </div>
@@ -63,7 +63,7 @@ export default function AnalysisResults({ loading, result, error }: AnalysisResu
 
   if (!result) {
     return (
-      <div className="min-h-[500px] flex flex-col items-center justify-center p-6 text-gray-400">
+      <div className="flex flex-col items-center justify-center p-6 text-gray-400">
         <FileSearchOutlined style={{ fontSize: '48px' }} />
         <h3 className="mt-4 text-lg font-medium text-gray-600">No Analysis Results Yet</h3>
         <p className="mt-2 text-center text-sm text-gray-500">
@@ -78,7 +78,7 @@ export default function AnalysisResults({ loading, result, error }: AnalysisResu
   const confidenceValue = parseFloat(confidence);
 
   return (
-    <div className="p-6 min-h-[500px]">
+    <div className="p-6">
       <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-3">Analysis Results</h2>
       
       <div className="flex flex-col md:flex-row justify-between gap-6">

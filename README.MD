@@ -2,6 +2,9 @@
 
 SmartBin is an AI-powered waste classification system that leverages deep learning models to identify and categorize different types of waste. This project provides a RESTful API built with **FastAPI** and supports multiple state-of-the-art deep learning models for image classification.
 
+## **Model Training Source**
+The deep learning models used in this project are trained using the **[Garbage Classification repository](https://github.com/AlanY1an/GarbageClassfication)**. This repository contains a comprehensive dataset processing pipeline, model selection, training scripts, and evaluation tools to generate high-accuracy waste classification models.
+
 ![SmartBin Demo](assets/demo.gif)
 
 ## **🚀 Supported Deep Learning Models**

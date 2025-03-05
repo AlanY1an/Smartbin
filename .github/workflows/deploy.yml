@@ -1,0 +1,33 @@
+name: Deploy Backend to AWS
+
+on:
+  push:
+    branches:
+      - awsec2-docker
+    paths:
+      - "backend/**" #only deploy when backend folder is changed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.AWS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: SSH into AWS and deploy backend
+        run: |
+          ssh ${{ secrets.AWS_USER }}@${{ secrets.AWS_HOST }} << 'EOF'
+            cd ${{ secrets.AWS_PROJECT_PATH }}
+            git pull origin awsec2-docker
+            docker-compose down
+            docker-compose up --build -d
+            docker-compose ps
+          EOF

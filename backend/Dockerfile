@@ -1,25 +1,23 @@
-# If use GPU, use this line
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+# Use GPU image if needed, otherwise use python:3.10
+ARG USE_GPU=false
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 AS gpu
+FROM python:3.10 AS cpu
 
-WORKDIR /app
+# Select base image based on ARG
+FROM ${USE_GPU:+gpu} AS final
 
+# Set working directory inside backend 
+WORKDIR /backend
 
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
-
-
-WORKDIR /app
-
-
-RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    ln -sf /usr/bin/python3 /usr/bin/python && \
-    ln -sf /usr/bin/pip3 /usr/bin/pip
-
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy Fast API to Docekr container 
+# Copy all project files from backend folder
 COPY . .
 
-# Run Fast API server
+# Expose FastAPI's default port
+EXPOSE 8000
+
+# Run FastAPI application
 CMD ["python", "main.py"]
